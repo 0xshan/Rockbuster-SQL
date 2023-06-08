@@ -10,6 +10,3 @@ The objective of the project was to answer business questions in order to drive 
 
 ## Data
 A relational database made up of 17 tables contatining data on film rentals, customers, actors, payments and more. 
-
-Here is the data set: 
-Here are the Tableau visualizations: https://public.tableau.com/app/profile/shannon1243
