@@ -1,0 +1,45 @@
+QUERY 1
+
+Select d.country,
+Count(A.customer_id)
+As total_number_of_customers
+From customer a
+Inner join address b on a.address b on a.address_id =
+b.address_id
+inner join city c on b.city_id = c.city_id
+inner join country d on c.country_id =
+d.country_od
+group by d.country
+order by count (a.customer_id) desc
+limit 10
+
+QUERY 2
+
+Select c.city, d.country, count(a.customer_id) as total_number_of_customers
+From customer a
+Inner join address b on a.address_id = b.address_id
+Inner join city c on b.city_id = c.city_id
+Inner join country d on c.country_id = d.country_id
+Where country in (‘India’, ‘China’, ‘United States’, ‘Japan’, ‘Mexico’, ‘Brazil’, ‘Russian Federation’, ‘Philipines’, ‘Turkey’, ‘Indonesia’)
+Group by d.country, c.city
+Order by count (a.customer_id) desc
+Limit 10
+
+QUERY 3
+
+Select b.customer_id,
+b.first_name,
+b.last_name,
+d.city,
+e.country,
+sum(a.amount) as total_amt_paid
+from customer b
+inner join payment a on b.customer_id = a.customer._id
+inner join address c on b.address_id = c.address_id
+inner join city d on c.city_id = d.city_id
+inner join country e on d.country_id = e.country_id
+where d.city in (‘Aurora’, ‘Atlixco’, ‘Xintai’, ‘Adoni’, ‘Dhule (Dhulia)’, ‘Kurashiki’,’Pingxiang’, ‘Sivas’, ‘Celaya’, ‘So Leopoldo’)
+group by b.customer_id, b.first_name, b.last_name, d.city, e.coutnry
+order by total_amount_paid DESC
+limit 10
+
